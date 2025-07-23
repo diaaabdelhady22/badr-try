@@ -16,21 +16,31 @@
           <a href="course1.html"><button class="bton">الحــــــــصص</button></a>
           <a href="course1.html"><button class="bton">الامتحــــــــانات</button></a>
           <a href="course1.html"><button class="bton">الجــــــدول</button></a>
-   <script>
-  const params = new URLSearchParams(window.location.search);
-  const code = params.get('code');
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+/*======================================== codes ===============================================*/
+    const names = {
+      "nQgy169752": "اهلا بك ، آدم احمد",
+      "hMaz760813": "hey , mohamed abdelsalam",
+      "lCWR178645": "hey , ahmed hasan",
+      "TQYP389214": "اهلا بك ، ضياء عبدالهادي",
+      "MWTZ513047": "hey , amr sakr",
+      "OooW156738": "hey , omar metwaly",
+      "BRng412308": "hey , ahmed said",
+      "WeZd184390": "hey , adam yehia"
+    };
+/*==============================================================================================*/
+    const display = document.getElementById('nameDisplay');
+    if(names[code]) {
+      display.textContent = names[code];
+    } else {
+      window.location.href="index.html"
+      
+       alert("code is not right")
+    }
 
-  // جلب البيانات من localStorage
-  const students = JSON.parse(localStorage.getItem("students")) || {};
-
-  const display = document.getElementById('nameDisplay');
-  if(students[code]) {
-    display.textContent = "أهلا بك، " + students[code];
-  } else {
-    alert("الكود غير صحيح");
-    window.location.href = "index.html";
-  }
-</script>
+  </script>
 
     </body>
  </html>
